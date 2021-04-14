@@ -2,11 +2,13 @@ package ui;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.PrintStream;
 
-public class Main{
+public class Hanoi{
 	private static String initialString;
 	public static void main(String args[]) throws NumberFormatException, IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -14,7 +16,8 @@ public class Main{
 
 	    int tries= Integer.parseInt(br.readLine());
 	    int number = 0;
-	    
+	    FileOutputStream os = new FileOutputStream("output/results.txt");
+	    PrintStream ps = new PrintStream(os);
 	    String answer = "";
 	    
 	    for(int i=0;i<tries;i++){
@@ -24,7 +27,11 @@ public class Main{
 	    	resolveTowerOfHanoi(number,towers, 0, 2, 1);
 	    	answer += initialString+"\n";
 	    }
-	    bw.write(answer);
+	    answer = answer.substring(0,answer.length()-1);
+	    bw.write("The results are in the file results.txt");
+	    ps.print(answer);
+	    
+	    
 	    br.close();
 	    bw.close();
 	}
