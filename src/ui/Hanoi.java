@@ -34,8 +34,8 @@ public class Hanoi{
 	    
 	    br.close();
 	    bw.close();
+	    ps.close();
 	}
-	
 	public static void resolveTowerOfHanoi(int n,int[] towerOfHanoi,int startTower,int finalTower,int auxTower) {
 		if(n==1) {
 			towerOfHanoi[startTower]--;
