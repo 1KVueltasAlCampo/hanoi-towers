@@ -43,7 +43,7 @@ public class Hanoi{
 			initialString += towerOfHanoi[0]+" "+towerOfHanoi[1]+" "+towerOfHanoi[2]+"\n";
 			return;
 		}
-		resolveTowerOfHanoi(n-1,towerOfHanoi,startTower,auxTower,finalTower);
+		resolveTowerOfHanoi(n-1,towerOfHanoi,startTower,auxTower,finalTower); 
 		towerOfHanoi[startTower]--;
 		towerOfHanoi[finalTower]++;
 		initialString += towerOfHanoi[0]+" "+towerOfHanoi[1]+" "+towerOfHanoi[2]+"\n";
